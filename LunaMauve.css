@@ -1,0 +1,94 @@
+/**
+ * @name LunaMauve
+ * @author Lunathecoder and serofix
+ * @description Slighty girly Version of discord
+ * @version 1.2.0
+ */
+
+:root, .theme-dark {
+  /* Main colour */
+  --luna-accent: #6E526E;
+
+  /* Panels  */
+  --luna-base-0: #1d1520; /* Main backgorund colour */
+  --luna-base-1: #1b141d; /* main surfaces */
+  --luna-base-2: #201825; /* slightly lifted */
+  --luna-base-3: #271e2f; /* highest */
+  --luna-float:  #1a131f; /* popouts */
+
+  /* Subtle borders */
+  --luna-border: rgba(0, 0, 0, 0.22);
+
+  /* Message bar */
+  --luna-input: #2c1e2c;
+
+  /* Scrollbar) */
+  --luna-scroll-thumb: #5F455F;
+  --luna-scroll-thumb-hover: #543D54;
+  --luna-scroll-track: rgba(0, 0, 0, 0.22);
+
+  /* Hook into Discord's variables*/
+  --background-primary: var(--luna-base-1) !important;
+  --background-secondary: var(--luna-base-0) !important;
+  --background-secondary-alt: var(--luna-base-2) !important;
+  --background-tertiary: var(--luna-base-0) !important;
+  --background-floating: var(--luna-float) !important;
+
+  --channeltextarea-background: var(--luna-input) !important;
+
+  /* Newer Discord UI */
+  --background-base-low: var(--luna-base-0) !important;
+  --background-base-lower: var(--luna-base-0) !important;
+  --background-base-lowest: var(--luna-base-0) !important;
+  --background-surface-high: var(--luna-base-1) !important;
+  --background-surface-higher: var(--luna-base-2) !important;
+  --background-surface-highest: var(--luna-base-3) !important;
+
+  --bg-overlay-color: var(--luna-base-1) !important;
+  --bg-overlay-color-inverse: var(--luna-base-1) !important;
+  --bg-overlay-app-frame: var(--luna-base-0) !important;
+
+  /* Scrollbar vars */
+  --scrollbar-auto-thumb: var(--luna-scroll-thumb) !important;
+  --scrollbar-auto-track: var(--luna-scroll-track) !important;
+  --scrollbar-thin-thumb: var(--luna-scroll-thumb) !important;
+  --scrollbar-thin-track: transparent !important;
+}
+
+/* App background*/
+html, body, #app-mount {
+  background:
+    radial-gradient(1200px 700px at 10% 8%, rgba(110,82,110,0.22), transparent 60%),
+    radial-gradient(900px 600px at 90% 12%, rgba(255, 0, 255, 0.14), transparent 62%),
+    radial-gradient(900px 650px at 50% 110%, rgba(110,82,110,0.12), transparent 60%),
+    var(--luna-base-0) !important;
+}
+
+
+#app-mount [class*="bg"],
+#app-mount [class^="bg-"] {
+  background-image: none !important;
+}
+
+/*message bar*/
+#app-mount [class*="channelTextArea"] {
+  background: transparent !important;
+}
+#app-mount [class*="channelTextArea"] [class*="scrollableContainer"] {
+  background: var(--channeltextarea-background) !important;
+  border: 1px solid var(--luna-border) !important;
+  border-radius: 12px !important;
+}
+
+
+/* Scrollbars (webkit fallback) */
+*::-webkit-scrollbar-thumb {
+  background-color: var(--luna-scroll-thumb) !important;
+  border-radius: 999px !important;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background-color: var(--luna-scroll-thumb-hover) !important;
+}
+*::-webkit-scrollbar-track {
+  background-color: var(--luna-scroll-track) !important;
+}
